@@ -22,10 +22,8 @@ namespace Helsinki2017
                 erdemények.Add(new Eredmény(line, "donto"));
             }
 
-            //3. feladat
-            //Console.WriteLine($"3. feladat: Sorok száma a fájlban: {erdemények.Count}");
-
-            //4.
+            //2. feladat
+            Console.WriteLine($"2. feladat\n\tA rövidprogramban {erdemények.Where(x => x.Szakasz == "rovid").Count()} induló volt.");
 
             Console.ReadKey();
         }
