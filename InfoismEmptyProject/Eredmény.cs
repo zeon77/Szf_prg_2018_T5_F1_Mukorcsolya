@@ -26,9 +26,16 @@ namespace Helsinki2017
             Név = lineSplitted[0];
             Ország = lineSplitted[1];
             Szakasz = szakasz;
-            Technikai = double.Parse(lineSplitted[2].Replace('.',','));
+            Technikai = double.Parse(lineSplitted[2].Replace('.', ','));
             Komponens = double.Parse(lineSplitted[3].Replace('.', ','));
             Levonás = double.Parse(lineSplitted[4].Replace('.', ','));
+        }
+
+        //4.
+        public static double ÖsszPontszám(string név, List<Eredmény> e)
+        {
+            return e.Where(x => x.Név == név)
+                    .Sum(x => x.Technikai + x.Komponens - x.Levonás);
         }
     }
 }
