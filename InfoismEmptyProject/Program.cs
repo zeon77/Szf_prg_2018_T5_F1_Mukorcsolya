@@ -12,7 +12,7 @@ namespace InfoismEmptyProject
         {
             List<RenameThisClass> renameThisList = new List<RenameThisClass>();
 
-            //Modify file name, and check if first line skip is needed.
+            //TODO: 4. Modify file name, and check if first line skip is needed.
             foreach (var line in File.ReadAllLines("filename.txt").Skip(1))
             {
                 renameThisList.Add(new RenameThisClass(line));
