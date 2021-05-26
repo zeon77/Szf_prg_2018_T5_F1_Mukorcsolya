@@ -1,0 +1,2 @@
+﻿MyProperty1;MyProperty2;MyProperty3;MyProperty4
+John Smith;24;123,12;true

@@ -7,6 +7,7 @@ namespace InfoismEmptyProject
 {
     class RenameThisClass
     {
+        //give corresponding names to properties
         public string MyProperty1 { get; set; }
         public int MyProperty2 { get; set; }
         public double MyProperty3 { get; set; }
