@@ -10,6 +10,7 @@ namespace InfoismEmptyProject
     {
         static void Main(string[] args)
         {
+            Console.ReadKey();
         }
     }
 }
