@@ -4,22 +4,26 @@ using System.Linq;
 using System.Text;
 using System.IO;
 
-namespace InfoismEmptyProject
+namespace Helsinki2017
 {
     class Program
     {
         static void Main(string[] args)
         {
-            List<RenameThisClass> renameThisList = new List<RenameThisClass>();
+            List<Eredmény> erdemények = new List<Eredmény>();
 
-            //TODO: 4. Modify file name, and check if first line skip is needed.
-            foreach (var line in File.ReadAllLines("filename.txt").Skip(1))
+            foreach (var line in File.ReadAllLines("rovidprogram.csv").Skip(1))
             {
-                renameThisList.Add(new RenameThisClass(line));
+                erdemények.Add(new Eredmény(line, "rovid"));
+            }
+
+            foreach (var line in File.ReadAllLines("donto.csv").Skip(1))
+            {
+                erdemények.Add(new Eredmény(line, "donto"));
             }
 
             //3. feladat
-            Console.WriteLine($"3. feladat: Sorok száma a fájlban: {renameThisList.Count}");
+            //Console.WriteLine($"3. feladat: Sorok száma a fájlban: {erdemények.Count}");
 
             //4.
 
