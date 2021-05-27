@@ -52,6 +52,20 @@ namespace Helsinki2017
                 .ToList()
                 .ForEach(x => Console.WriteLine($"\t{x.Ország}: {x.VersenyzőkSzáma} versenyző"));
 
+            //8.
+            int helyezés = 1;
+            List<string> sorok = new List<string>();
+
+            eredmények
+                .Where(x => x.Szakasz == Eredmény.Szakaszok.Döntő)
+                .Select(x => new {Helyezés = helyezés++, Név = x.Név, Ország = x.Ország, Összpontszám = Eredmény.ÖsszPontszám(x.Név, eredmények) })
+                .OrderByDescending(x => x.Összpontszám)
+                .Take(10)
+                .ToList()
+                .ForEach(x => sorok.Add($"{x.Helyezés};{x.Név};{x.Ország};{x.Összpontszám}"));
+
+            File.WriteAllLines("vegeredmeny.csv", sorok);
+
             Console.ReadKey();
         }
     }
