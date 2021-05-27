@@ -42,6 +42,16 @@ namespace Helsinki2017
                 Console.WriteLine($"\tA versenyző összpontszáma: {Eredmény.ÖsszPontszám(név, eredmények)}");
             }
 
+            //7.
+            Console.WriteLine($"7. feladat");
+            eredmények
+                .Where(x => x.Szakasz == Eredmény.Szakaszok.Döntő)
+                .GroupBy(x => x.Ország)
+                .Select(gr => new { Ország = gr.Key, VersenyzőkSzáma = gr.Count() })
+                .Where(x => x.VersenyzőkSzáma > 1)
+                .ToList()
+                .ForEach(x => Console.WriteLine($"\t{x.Ország}: {x.VersenyzőkSzáma} versenyző"));
+
             Console.ReadKey();
         }
     }
