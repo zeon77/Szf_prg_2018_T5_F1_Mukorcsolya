@@ -29,6 +29,19 @@ namespace Helsinki2017
             string s = eredmények.Where(x => x.Szakasz == Eredmény.Szakaszok.Döntő).Any(x => x.Ország == "HUN") ? "bejutott" : "nem jutott be";
             Console.WriteLine($"3. feladat\n\t A magyar versenyző {s} a kűrbe.");
 
+            //5.
+            Console.Write($"5. feladat \n\tKérem a versenyző nevét: ");
+            string név = Console.ReadLine();
+            if (!eredmények.Any(x => x.Név == név))
+            {
+                Console.WriteLine($"\tIlyen nevű induló nem volt.");
+            }
+            else
+            {
+                //6.
+                Console.WriteLine($"\tA versenyző összpontszáma: {Eredmény.ÖsszPontszám(név, eredmények)}");
+            }
+
             Console.ReadKey();
         }
     }
